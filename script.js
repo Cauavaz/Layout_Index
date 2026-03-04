@@ -29,6 +29,9 @@ class DarkModeToggle {
         this.sunIcon.style.display = 'none';
         this.moonIcon.style.display = 'block';
         this.updateThemeImage(true);
+        if (window.initParticlesTheme) {
+            window.initParticlesTheme(true);
+        }
         localStorage.setItem('darkMode', 'enabled');
     }
 
@@ -37,6 +40,9 @@ class DarkModeToggle {
         this.sunIcon.style.display = 'block';
         this.moonIcon.style.display = 'none';
         this.updateThemeImage(false);
+        if (window.initParticlesTheme) {
+            window.initParticlesTheme(false);
+        }
         localStorage.setItem('darkMode', 'disabled');
     }
 
@@ -274,6 +280,99 @@ class Carousel {
 document.addEventListener('DOMContentLoaded', () => {
     const darkModeToggle = new DarkModeToggle();
     const carousel = new Carousel();
+
+    window.initParticlesTheme = (isDarkMode) => {
+        if (!window.particlesJS) return;
+
+        const particleColor = isDarkMode ? '#b8a4d9' : '#9c83c5';
+        const lineColor = isDarkMode ? '#ff8c42' : '#9c83c5';
+
+        if (window.pJSDom && window.pJSDom.length) {
+            window.pJSDom.forEach((item) => {
+                item.pJS.fn.vendors.destroypJS();
+            });
+            window.pJSDom = [];
+        }
+
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 70,
+                    density: {
+                        enable: true,
+                        value_area: 900
+                    }
+                },
+                color: {
+                    value: particleColor
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.35,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 0.6,
+                        opacity_min: 0.12,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 160,
+                    color: lineColor,
+                    opacity: 0.22,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2.2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'window',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 180,
+                        line_linked: {
+                            opacity: 0.4
+                        }
+                    },
+                    push: {
+                        particles_nb: 3
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    };
+
+    window.initParticlesTheme(document.body.classList.contains('dark-mode'));
 
     const observerOptions = {
         threshold: 0.1,
