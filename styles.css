@@ -421,9 +421,9 @@ body:not(.dark-mode) .space-top  {
 
 .carousel-item {
     min-width: 0;
-    background: linear-gradient(145deg, rgba(139, 111, 184, 0.85) 0%, rgba(156, 131, 197, 0.8) 100%);
+    background: linear-gradient(145deg, rgba(212, 197, 240, 0.65) 0%, rgba(255, 220, 180, 0.55) 100%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(184, 164, 217, 0.4);
     border-radius: clamp(10px, 1.2vw, 12px);
     padding: clamp(16px, 2vw, 20px) clamp(14px, 1.8vw, 16px);
     display: flex;
@@ -436,6 +436,11 @@ body:not(.dark-mode) .space-top  {
     position: relative;
     overflow: hidden;
     min-height: 208px;
+}
+
+body.dark-mode .carousel-item {
+    background: linear-gradient(145deg, rgba(139, 111, 184, 0.9) 0%, rgba(102, 78, 145, 0.85) 100%);
+    border: 1px solid rgba(184, 164, 217, 0.35);
 }
 
 @media (max-width: 900px) {
@@ -519,17 +524,25 @@ body:not(.dark-mode) .space-top  {
     font-family: 'Sora', 'Plus Jakarta Sans', sans-serif;
     font-size: 15px;
     font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 8px 0;
+    color: #2d1b4e;
+    margin-bottom: 8px;
     line-height: 1.3;
+}
+
+body.dark-mode .text-box h4 {
+    color: #ffffff;
 }
 
 .text-box p {
     font-size: 13px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.92);
+    color: rgba(45, 27, 78, 0.85);
     margin: 0;
     line-height: 1.55;
+}
+
+body.dark-mode .text-box p {
+    color: rgba(255, 255, 255, 0.92);
 }
 
 .cta-card .text-box {
@@ -537,6 +550,10 @@ body:not(.dark-mode) .space-top  {
 }
 
 .carousel-item:nth-child(4) .text-box h4 {
+    color: #8b6f38;
+}
+
+body.dark-mode .carousel-item:nth-child(4) .text-box h4 {
     color: #ffdca8;
 }
 

@@ -102,16 +102,16 @@ class DarkModeToggle {
 
         if (isDarkMode) {
             this.robotDescriptionIcon.className = 'fa-solid fa-moon';
-            this.robotDescriptionTitle.textContent = 'Robô Preto: imersivo e futurista';
-            this.robotDescriptionText.textContent = 'No modo dark, o robô preto cria uma atmosfera tecnológica e marcante, com presença forte para experiências mais imersivas.';
-            this.robotDescriptionHighlight.textContent = 'Seu visual destaca profundidade e performance, ideal para transmitir inovação com personalidade.';
+            this.robotDescriptionTitle.textContent = 'SHADOW NEXUS: Poder e Imersão';
+            this.robotDescriptionText.textContent = 'No modo dark, o SHADOW NEXUS emerge como uma presença tecnológica marcante e futurista. Seu design em tons escuros cria uma atmosfera imersiva que transmite poder e sofisticação. Este robô representa a vanguarda da inovação, combinando estética cyberpunk com funcionalidade de ponta. Cada detalhe foi pensado para criar uma experiência visual impactante e memorável.';
+            this.robotDescriptionHighlight.textContent = 'Ideal para projetos que buscam transmitir autoridade tecnológica, performance extrema e uma identidade visual ousada que não passa despercebida.';
             return;
         }
 
         this.robotDescriptionIcon.className = 'fa-solid fa-sun';
-        this.robotDescriptionTitle.textContent = 'Robô Branco: leve e amigável';
-        this.robotDescriptionText.textContent = 'No modo claro, o robô branco traz uma presença clean e moderna, com visual suave que combina com a identidade clara da página.';
-        this.robotDescriptionHighlight.textContent = 'Ele transmite acessibilidade e proximidade, ideal para destacar inovação de forma elegante e objetiva.';
+        this.robotDescriptionTitle.textContent = 'LUMINA PRIME: Elegância e Clareza';
+        this.robotDescriptionText.textContent = 'No modo claro, o LUMINA PRIME se apresenta com uma estética clean e moderna que transmite acessibilidade e sofisticação. Seu design em tons claros cria uma atmosfera acolhedora e profissional, perfeita para experiências que valorizam a clareza visual. Este robô simboliza inovação com elegância, combinando formas suaves com tecnologia de ponta para criar uma presença marcante sem ser invasiva.';
+        this.robotDescriptionHighlight.textContent = 'Perfeito para soluções que priorizam usabilidade, confiança e uma identidade visual que comunica modernidade de forma objetiva e memorável.';
     }
 
     updateRobotHeadings(isDarkMode) {
@@ -556,8 +556,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         mode: 'grab'
                     },
                     onclick: {
-                        enable: true,
-                        mode: 'push'
+                        enable: false
                     },
                     resize: true
                 },
