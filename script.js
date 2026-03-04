@@ -7,6 +7,16 @@ class DarkModeToggle {
         this.themeImage = document.querySelector('.img-index');
         this.darkModeImageSrc = './img/index.png';
         this.lightModeImageSrc = './img/indexbauru.png';
+        this.robotDark = document.getElementById('robot-dark');
+        this.robotLight = document.getElementById('robot-light');
+        this.robotDescriptionIcon = document.getElementById('robotDescriptionIcon');
+        this.robotDescriptionTitle = document.getElementById('robotDescriptionTitle');
+        this.robotDescriptionText = document.getElementById('robotDescriptionText');
+        this.robotDescriptionHighlight = document.getElementById('robotDescriptionHighlight');
+        this.robotMainTitle = document.getElementById('robotMainTitle');
+        this.robotSubtitle = document.getElementById('robotSubtitle');
+        this.carouselTitle = document.querySelector('.carousel-title');
+        this.carouselItems = Array.from(document.querySelectorAll('.carousel-item'));
         
         this.init();
     }
@@ -17,6 +27,10 @@ class DarkModeToggle {
             this.enableDarkMode();
         } else {
             this.updateThemeImage(false);
+            this.updateRobots(false);
+            this.updateRobotHeadings(false);
+            this.updateRobotDescription(false);
+            this.updateCarouselThemeContent(false);
         }
 
         this.toggle.addEventListener('click', () => {
@@ -29,6 +43,10 @@ class DarkModeToggle {
         this.sunIcon.style.display = 'none';
         this.moonIcon.style.display = 'block';
         this.updateThemeImage(true);
+        this.updateRobots(true);
+        this.updateRobotHeadings(true);
+        this.updateRobotDescription(true);
+        this.updateCarouselThemeContent(true);
         if (window.initParticlesTheme) {
             window.initParticlesTheme(true);
         }
@@ -40,6 +58,10 @@ class DarkModeToggle {
         this.sunIcon.style.display = 'block';
         this.moonIcon.style.display = 'none';
         this.updateThemeImage(false);
+        this.updateRobots(false);
+        this.updateRobotHeadings(false);
+        this.updateRobotDescription(false);
+        this.updateCarouselThemeContent(false);
         if (window.initParticlesTheme) {
             window.initParticlesTheme(false);
         }
@@ -61,6 +83,159 @@ class DarkModeToggle {
         }, 350);
     }
 
+    updateRobots(isDarkMode) {
+        if (!this.robotDark || !this.robotLight) return;
+        
+        if (isDarkMode) {
+            this.robotDark.style.display = 'block';
+            this.robotLight.style.display = 'none';
+        } else {
+            this.robotDark.style.display = 'none';
+            this.robotLight.style.display = 'block';
+        }
+    }
+
+    updateRobotDescription(isDarkMode) {
+        if (!this.robotDescriptionTitle || !this.robotDescriptionText || !this.robotDescriptionHighlight || !this.robotDescriptionIcon) {
+            return;
+        }
+
+        if (isDarkMode) {
+            this.robotDescriptionIcon.className = 'fa-solid fa-moon';
+            this.robotDescriptionTitle.textContent = 'Robô Preto: imersivo e futurista';
+            this.robotDescriptionText.textContent = 'No modo dark, o robô preto cria uma atmosfera tecnológica e marcante, com presença forte para experiências mais imersivas.';
+            this.robotDescriptionHighlight.textContent = 'Seu visual destaca profundidade e performance, ideal para transmitir inovação com personalidade.';
+            return;
+        }
+
+        this.robotDescriptionIcon.className = 'fa-solid fa-sun';
+        this.robotDescriptionTitle.textContent = 'Robô Branco: leve e amigável';
+        this.robotDescriptionText.textContent = 'No modo claro, o robô branco traz uma presença clean e moderna, com visual suave que combina com a identidade clara da página.';
+        this.robotDescriptionHighlight.textContent = 'Ele transmite acessibilidade e proximidade, ideal para destacar inovação de forma elegante e objetiva.';
+    }
+
+    updateRobotHeadings(isDarkMode) {
+        if (!this.robotMainTitle || !this.robotSubtitle) return;
+
+        if (isDarkMode) {
+            this.robotMainTitle.textContent = 'NOX TITAN';
+            this.robotSubtitle.textContent = 'Potência visual para uma jornada futurista, intensa e imersiva.';
+            return;
+        }
+
+        this.robotMainTitle.textContent = 'LUMINA PRIME';
+        this.robotSubtitle.textContent = 'Elegância em movimento para experiências claras e memoráveis.';
+    }
+
+    updateCarouselThemeContent(isDarkMode) {
+        if (!this.carouselItems.length) return;
+
+        const darkContent = {
+            sectionTitle: 'NOX TITAN em ação: poder, precisão e presença',
+            cards: [
+                {
+                    icon: 'fa-solid fa-moon',
+                    title: 'Modo Noturno Imersivo',
+                    description: 'O robô preto domina cenas escuras com presença premium e visual cinematográfico.'
+                },
+                {
+                    icon: 'fa-solid fa-gauge-high',
+                    title: 'Performance de Elite',
+                    description: 'Respostas rápidas e movimentos fluidos para uma experiência mais intensa.'
+                },
+                {
+                    icon: 'fa-solid fa-shield-halved',
+                    title: 'Blindagem Inteligente',
+                    description: 'Arquitetura estável para operar com confiabilidade mesmo em cenários exigentes.'
+                },
+                {
+                    icon: 'fa-solid fa-wave-square',
+                    title: 'Leitura de Ambiente',
+                    description: 'Interpreta contexto visual com precisão para reações mais naturais e impactantes.'
+                },
+                {
+                    icon: 'fa-solid fa-dragon',
+                    title: 'Presença Marcante',
+                    description: 'Design escuro e robusto que comunica força tecnológica em cada interação.'
+                },
+                {
+                    icon: 'fa-solid fa-circle-play',
+                    title: 'Ativar NOX TITAN',
+                    description: 'Experimente o modo dark completo e veja o robô preto no seu máximo potencial.',
+                  
+                }
+            ]
+        };
+
+        const lightContent = {
+            sectionTitle: 'LUMINA PRIME em ação: leveza, clareza e conexão',
+            cards: [
+                {
+                    icon: 'fa-solid fa-sun',
+                    title: 'Estética Clara e Elegante',
+                    description: 'O robô branco entrega uma presença limpa, moderna e convidativa.'
+                },
+                {
+                    icon: 'fa-solid fa-comment-dots',
+                    title: 'Comunicação Amigável',
+                    description: 'Interações naturais que aproximam o usuário e facilitam a navegação.'
+                },
+                {
+                    icon: 'fa-solid fa-wand-magic-sparkles',
+                    title: 'Experiência Fluida',
+                    description: 'Transições suaves e comportamento consistente para uma jornada agradável.'
+                },
+                {
+                    icon: 'fa-solid fa-chart-line',
+                    title: '+42% Engajamento',
+                    description: 'Visual claro com mensagens objetivas aumenta foco e retenção do usuário.'
+                },
+                {
+                    icon: 'fa-solid fa-feather-pointed',
+                    title: 'Leve, sem perder potência',
+                    description: 'Interface delicada com tecnologia robusta para escalar com equilíbrio.'
+                },
+                {
+                    icon: 'fa-solid fa-circle-play',
+                    title: 'Ativar LUMINA PRIME',
+                    description: 'Teste o modo claro e descubra a versão mais acolhedora da experiência.',
+                }
+            ]
+        };
+
+        const themeContent = isDarkMode ? darkContent : lightContent;
+
+        if (this.carouselTitle) {
+            this.carouselTitle.textContent = themeContent.sectionTitle;
+        }
+
+        this.carouselItems.forEach((item, index) => {
+            const card = themeContent.cards[index];
+            if (!card) return;
+
+            const iconElement = item.querySelector('.icon-label i');
+            const titleElement = item.querySelector('.text-box h4');
+            const descriptionElement = item.querySelector('.text-box p');
+            const ctaElement = item.querySelector('.carousel-cta');
+
+            if (iconElement) {
+                iconElement.className = card.icon;
+            }
+
+            if (titleElement) {
+                titleElement.textContent = card.title;
+            }
+
+            if (descriptionElement) {
+                descriptionElement.textContent = card.description;
+            }
+
+            if (ctaElement && card.cta) {
+                ctaElement.textContent = card.cta;
+            }
+        });
+    }
+
     toggleDarkMode() {
         if (this.body.classList.contains('dark-mode')) {
             this.disableDarkMode();
@@ -73,9 +248,12 @@ class DarkModeToggle {
 class Carousel {
     constructor() {
         this.track = document.querySelector('.carousel-track');
+        this.container = document.querySelector('.carousel-container');
         this.items = Array.from(document.querySelectorAll('.carousel-item'));
         this.prevBtn = document.querySelector('.carousel-btn.prev');
         this.nextBtn = document.querySelector('.carousel-btn.next');
+        this.dotsContainer = document.querySelector('.carousel-dots');
+        this.dots = [];
         
         this.currentIndex = 0;
         this.itemsToShow = this.getItemsToShow();
@@ -89,6 +267,7 @@ class Carousel {
     }
 
     init() {
+        this.createDots();
         this.updateCarousel();
         this.attachEventListeners();
         this.startAutoPlay();
@@ -109,8 +288,40 @@ class Carousel {
             if (this.currentIndex >= this.items.length - this.itemsToShow + 1) {
                 this.currentIndex = Math.max(0, this.items.length - this.itemsToShow);
             }
+            this.createDots();
             this.updateCarousel();
         }
+    }
+
+    createDots() {
+        if (!this.dotsContainer) return;
+
+        const pageCount = Math.max(1, this.items.length - this.itemsToShow + 1);
+        this.dotsContainer.innerHTML = '';
+        this.dots = [];
+
+        for (let i = 0; i < pageCount; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            dot.type = 'button';
+            dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+
+            dot.addEventListener('click', () => {
+                this.goToSlide(i);
+                this.resetAutoPlay();
+            });
+
+            this.dotsContainer.appendChild(dot);
+            this.dots.push(dot);
+        }
+    }
+
+    updateDots() {
+        if (!this.dots.length) return;
+
+        this.dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentIndex);
+        });
     }
 
     attachEventListeners() {
@@ -154,34 +365,35 @@ class Carousel {
     }
 
     goToPrevious() {
-        if (this.currentIndex > 0) {
-            this.currentIndex--;
-            this.updateCarousel();
-        }
+        const maxIndex = Math.max(0, this.items.length - this.itemsToShow);
+        this.currentIndex = this.currentIndex > 0 ? this.currentIndex - 1 : maxIndex;
+        this.updateCarousel();
     }
 
     goToNext() {
-        const maxIndex = this.items.length - this.itemsToShow;
-        if (this.currentIndex < maxIndex) {
-            this.currentIndex++;
-            this.updateCarousel();
-        } else {
-            this.currentIndex = 0;
-            this.updateCarousel();
-        }
+        const maxIndex = Math.max(0, this.items.length - this.itemsToShow);
+        this.currentIndex = this.currentIndex < maxIndex ? this.currentIndex + 1 : 0;
+        this.updateCarousel();
     }
 
     goToSlide(index) {
-        const maxIndex = this.items.length - this.itemsToShow;
+        const maxIndex = Math.max(0, this.items.length - this.itemsToShow);
         this.currentIndex = Math.min(index, maxIndex);
         this.updateCarousel();
     }
 
     updateCarousel() {
-        if (!this.items.length || !this.track) return;
-        
-        const itemWidth = this.items[0].offsetWidth;
+        if (!this.items.length || !this.track || !this.container) return;
+
         const gap = parseFloat(getComputedStyle(this.track).gap) || 15;
+        const containerWidth = this.container.clientWidth;
+        const itemWidth = (containerWidth - gap * (this.itemsToShow - 1)) / this.itemsToShow;
+
+        this.items.forEach((item) => {
+            item.style.minWidth = `${itemWidth}px`;
+            item.style.maxWidth = `${itemWidth}px`;
+        });
+
         const offset = -(this.currentIndex * (itemWidth + gap));
         
         this.track.style.transform = `translateX(${offset}px)`;
@@ -193,22 +405,15 @@ class Carousel {
             }
         });
 
+        this.updateDots();
         this.updateButtons();
     }
 
     updateButtons() {
         if (!this.prevBtn || !this.nextBtn) return;
-        
-        const maxIndex = this.items.length - this.itemsToShow;
-        
-        if (this.currentIndex === 0) {
-            this.prevBtn.style.opacity = '0.5';
-            this.prevBtn.style.cursor = 'not-allowed';
-        } else {
-            this.prevBtn.style.opacity = '1';
-            this.prevBtn.style.cursor = 'pointer';
-        }
 
+        this.prevBtn.style.opacity = '1';
+        this.prevBtn.style.cursor = 'pointer';
         this.nextBtn.style.opacity = '1';
         this.nextBtn.style.cursor = 'pointer';
     }

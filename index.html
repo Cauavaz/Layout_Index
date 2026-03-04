@@ -2,6 +2,10 @@
 <html lang="pt-BR">
 <head>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.65/build/spline-viewer.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +35,8 @@
         <section class="main-section">
             <div class="image-container" data-aos="zoom-in" data-aos-delay="100">
                 <div class="image-placeholder">
-                    <spline-viewer url="https://prod.spline.design/Wa3a2rQYFgusLcQK/scene.splinecode"></spline-viewer>
+                    <spline-viewer id="robot-dark" url="https://prod.spline.design/Wa3a2rQYFgusLcQK/scene.splinecode"></spline-viewer>
+                    <spline-viewer id="robot-light" url="https://prod.spline.design/9voLUNt7tdJxUq2H/scene.splinecode" style="display: none;"></spline-viewer>
                 </div>
                 <div class="image-glow"></div>
                 <div class="space-top">
@@ -41,19 +46,20 @@
             
 
             <div class="content-container" data-aos="fade-up">
-                <h1 class="title">Título Lorem Ipsum</h1>
-                <h2 class="subtitle">Subtítulo Lorem ipsum</h2>
+                <h1 id="robotMainTitle" class="title">LUMINA PRIME</h1>
+                <h2 id="robotSubtitle" class="subtitle">Elegância em movimento para experiências claras e memoráveis.</h2>
                 
                 <div class="description" data-aos="fade-up" data-aos-delay="200">
-                    <p><strong>Descrição com 5 linhas de texto</strong></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p class="description-title">
+                        <i id="robotDescriptionIcon" class="fa-solid fa-sun"></i>
+                        <strong id="robotDescriptionTitle">Robô Branco: leve e amigável</strong>
+                    </p>
+                    <p id="robotDescriptionText">No modo claro, o robô branco traz uma presença clean e moderna, com visual suave que combina com a identidade clara da página.</p>
+                    <p id="robotDescriptionHighlight">Ele transmite acessibilidade e proximidade, ideal para destacar inovação de forma elegante e objetiva.</p>
                 </div>
 
                 <div class="carousel-section" data-aos="fade-left" data-aos-delay="300">
-                    <h3 class="carousel-title">Carrossel com transição de blocos com ícone e texto</h3>
+                    <h3 class="carousel-title">Explore os diferenciais do ecossistema robótico</h3>
                     
                     <div class="carousel-wrapper">
                         <button class="carousel-btn prev" aria-label="Anterior">
@@ -66,46 +72,62 @@
                             <div class="carousel-track">
                                 <div class="carousel-item active">
                                     <div class="icon-box">
-                                        <span class="icon-label">ícone</span>
+                                        <span class="icon-label"><i class="fa-solid fa-brain"></i></span>
                                     </div>
                                     <div class="text-box">
-                                        <p>Texto</p>
+                                        <h4>IA Conversacional</h4>
+                                        <p>Interações naturais para engajar o usuário com respostas inteligentes.</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
                                     <div class="icon-box">
-                                        <span class="icon-label">ícone</span>
+                                        <span class="icon-label"><i class="fa-solid fa-bolt"></i></span>
                                     </div>
                                     <div class="text-box">
-                                        <p>Texto</p>
+                                        <h4>Tempo Real</h4>
+                                        <p>Baixa latência para uma experiência fluida do início ao fim.</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
                                     <div class="icon-box">
-                                        <span class="icon-label">ícone</span>
+                                        <span class="icon-label"><i class="fa-solid fa-shield-halved"></i></span>
                                     </div>
                                     <div class="text-box">
-                                        <p>Texto</p>
+                                        <h4>Segurança Avançada</h4>
+                                        <p>Camadas de proteção para operações estáveis e confiáveis.</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
                                     <div class="icon-box">
-                                        <span class="icon-label">ícone</span>
+                                        <span class="icon-label"><i class="fa-solid fa-chart-line"></i></span>
                                     </div>
                                     <div class="text-box">
-                                        <p>Texto</p>
+                                        <h4>+42% Eficiência</h4>
+                                        <p>Ganhos reais de produtividade e melhor aproveitamento de recursos.</p>
                                     </div>
                                 </div>
 
                                 <div class="carousel-item">
                                     <div class="icon-box">
-                                        <span class="icon-label">ícone</span>
+                                        <span class="icon-label"><i class="fa-solid fa-rocket"></i></span>
                                     </div>
                                     <div class="text-box">
-                                        <p>Texto</p>
+                                        <h4>Escalável</h4>
+                                        <p>Arquitetura pronta para crescer junto com o seu produto.</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item cta-card">
+                                    <div class="icon-box">
+                                        <span class="icon-label"><i class="fa-solid fa-circle-play"></i></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <h4>Pronto para testar?</h4>
+                                        <p>Veja o robô em ação e descubra como ele pode elevar sua experiência digital.</p>
+                                        <a class="carousel-cta" href="#">Ver demonstração</a>
                                     </div>
                                 </div>
                             </div>
@@ -117,6 +139,8 @@
                             </svg>
                         </button>
                     </div>
+
+                    <div class="carousel-dots" aria-label="Paginação do carrossel"></div>
                 </div>
             </div>
         </section>
