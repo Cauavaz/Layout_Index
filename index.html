@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.65/build/spline-viewer.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Front-end - Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="particles-js" aria-hidden="true"></div>
+    <div class="container">
+        <button class="dark-mode-toggle" data-aos="zoom-in" id="darkModeToggle" aria-label="Alternar modo escuro">
+            <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" style="display: none;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+        
+        <section class="main-section">
+            <div class="image-container" data-aos="zoom-in" data-aos-delay="100">
+                <div class="image-placeholder">
+                    <spline-viewer url="https://prod.spline.design/Wa3a2rQYFgusLcQK/scene.splinecode"></spline-viewer>
+                </div>
+                <div class="image-glow"></div>
+                <div class="space-top">
+                    <img src="./img/index.png" class="img-index" alt="Imagem Placeholder">
+                </div>
+            </div>
+            
+
+            <div class="content-container" data-aos="fade-up">
+                <h1 class="title">Título Lorem Ipsum</h1>
+                <h2 class="subtitle">Subtítulo Lorem ipsum</h2>
+                
+                <div class="description" data-aos="fade-up" data-aos-delay="200">
+                    <p><strong>Descrição com 5 linhas de texto</strong></p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+
+                <div class="carousel-section" data-aos="fade-left" data-aos-delay="300">
+                    <h3 class="carousel-title">Carrossel com transição de blocos com ícone e texto</h3>
+                    
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn prev" aria-label="Anterior">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-item active">
+                                    <div class="icon-box">
+                                        <span class="icon-label">ícone</span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Texto</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="icon-box">
+                                        <span class="icon-label">ícone</span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Texto</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="icon-box">
+                                        <span class="icon-label">ícone</span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Texto</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="icon-box">
+                                        <span class="icon-label">ícone</span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Texto</p>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="icon-box">
+                                        <span class="icon-label">ícone</span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>Texto</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-btn next" aria-label="Próximo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 700,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 80
+      });
+    </script>
+</body>
+</html>
